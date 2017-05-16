@@ -44,6 +44,7 @@ the list of places that the app holds is limited to size of 10. any append on to
 
 yes, really easy. just implement the dataHandling interface which is 
 
+```go
     // Interface - data handler interface
     type Interface interface {
         // Next - read next place into &p
@@ -53,8 +54,11 @@ yes, really easy. just implement the dataHandling interface which is
         // close all related resources to the handler
         Close() error
     }
-    
+```
+
 and make sure to register your handler like that
 
+```go
     	// register handler
     	dataHandling.RegHandler("csv", csvHandler)
+```     
