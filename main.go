@@ -6,17 +6,22 @@ import (
 	"github.com/yaronsumel/geo-coding-test/src/list"
 	"github.com/yaronsumel/geo-coding-test/src/place"
 	"log"
+	"flag"
 )
 
 // our target point
 var targetPoint = place.Place{Lat: 51.925146, Lon: 4.478617}
 // places list to populate places
 var placesList = list.PlacesList{}
+// path to file
+var file = flag.String("file","data.csv","path to csv file")
 
 // get things ready
 func init() {
+	// parse flags
+	flag.Parse()
 	// create new csv handler
-	csvHandler, err := csv.NewCsvHandler("data.csv")
+	csvHandler, err := csv.NewCsvHandler(*file)
 	if err != nil {
 		log.Panicln(err)
 	}
