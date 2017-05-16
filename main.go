@@ -32,6 +32,9 @@ func main() {
 		log.Panicln(err)
 	}
 
+	// schedule close
+	defer handler.Close()
+
 	// p will hold our place
 	var p = &place.Place{}
 
