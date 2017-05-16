@@ -8,6 +8,13 @@
 ### run it
 
  `$ go run main.go`
+ 
+##### flags
+
+```
+  -file string
+        path to csv file (default "data.csv")
+```
 
 ### expected output
 
