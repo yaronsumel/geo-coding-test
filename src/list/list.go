@@ -62,15 +62,21 @@ func (s PlacesList) TopFive() PlacesList {
 // return bottom5 placesList
 func (s PlacesList) BottomFive() PlacesList {
 	l := len(s)
+	// x is going to contain our copy
+	// create PlacesList in the size of s
+	x := make(PlacesList, l)
+	// copy s (PlacesList) to x
+	// in order to work on the copy
+	copy(x, s)
 	// reverse list
 	// really cool trick
 	// you should look at https://github.com/golang/go/wiki/SliceTricks
 	for i := l/2 - 1; i >= 0; i-- {
 		opp := l - 1 - i
-		s[i], s[opp] = s[opp], s[i]
+		x[i], x[opp] = x[opp], x[i]
 	}
 	if l < 5 {
-		return s[:l]
+		return x[:l]
 	}
-	return s[:5]
+	return x[:5]
 }
