@@ -1,6 +1,8 @@
 
 ### 'GPS' coding challenge by Yaron Sumel
 
+the challenge is to build go program that's reads the csv file and returns the five closest places and five Furthest places.
+
 ## get it 
 
  `$ go get github.com/yaronsumel/geo-coding-test`
